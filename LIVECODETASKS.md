@@ -1,20 +1,20 @@
-- [ ] Create an _index.html_ with a basic HTML page structure
-- [ ] Create an empty CSS file for the project
-- [ ] Create an empty JavaScript file for the project
-- [ ] Link to the empty CSS file from the bottom of the `head` of your HTML file
-- [ ] Link to the empty JavaScript file from the bottom of the `body` of your HTML file
-- [ ] Add a level-1 heading (`h1`) to the body with the app title, just so there's something to see on the page
+- [X] Create an _index.html_ with a basic HTML page structure
+- [X] Create an empty CSS file for the project
+- [X] Create an empty JavaScript file for the project
+- [X] Link to the empty CSS file from the bottom of the `head` of your HTML file
+- [X] Link to the empty JavaScript file from the bottom of the `body` of your HTML file
+- [X] Add a level-1 heading (`h1`) to the body with the app title, just so there's something to see on the page
 
 Check the app in the browser.
 
-- [ ] Add a Leaflet map for displaying the list of stops to the page
-- [ ] Import the data from _site/data/stops.js_ into your JavaScript file.
-- [ ] Import the data from _site/data/universitycity.js_ into your JavaScript file.
-- [ ] Add the University City shape to the map. Style it so that it has some pop.
+- [X] Add a Leaflet map for displaying the list of stops to the page
+- [X] Import the data from _site/data/stops.js_ into your JavaScript file.
+- [X] Import the data from _site/data/universitycity.js_ into your JavaScript file.
+- [X] Add the University City shape to the map. Style it so that it has some pop.
 
-- [ ] Create a function called `makeStopFeature` to transform one of the stop elements into a GeoJSON-like feature.
-- [ ] Use the function to display all the `stops` data on the map.
-- [ ] Create a function to show an array of stops on the map.
+- [X] Create a function called `makeStopFeature` to transform one of the stop elements into a GeoJSON-like feature.
+- [X] Use the function to display all the `stops` data on the map.
+- [X] Create a function to show an array of stops on the map. Call the function `showStopsOnMap`
 
 - [ ] Create a list element (unordered -- `ul`) in the HTML give it an id of `stop-list`
 - [ ] Write a function that fills in the list with list item (`li`) elements for each stop in an array
