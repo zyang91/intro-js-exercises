@@ -1,4 +1,4 @@
-/* globals plusOne, timesThree, add, multiply, isEven, isOdd */
+/* globals _, plusOne, timesThree, add, multiply, isEven, isOdd */
 
 /* =====================
 # Exercise: Functions As Values (i.e., Higher Order Functions)
