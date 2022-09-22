@@ -1,4 +1,5 @@
 /* globals _ */
+/* eslint no-unused-vars:off */
 
 /* =====================
 # Exercise: Iterators

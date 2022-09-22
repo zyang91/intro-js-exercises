@@ -1,4 +1,5 @@
 /* globals _, plusOne, timesThree, add, multiply, isEven, isOdd */
+/* eslint no-unused-vars:off */
 
 /* =====================
 # Exercise: Functions As Values (i.e., Higher Order Functions)
