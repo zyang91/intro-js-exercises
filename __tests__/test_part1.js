@@ -7,7 +7,7 @@ beforeAll(async () => {
   page.on('console', (msg) => {
     output += `${msg.text()}\n`;
   });
-  await page.goto('http://localhost:8000/exercise/part1-fizzbuzz/');
+  await page.goto('http://localhost:8080/exercises/part1-fizzbuzz/');
   console.log(output);
 });
 

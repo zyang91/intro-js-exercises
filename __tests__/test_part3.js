@@ -1,10 +1,11 @@
 /* global describe, beforeAll, it, page, expect */
 
 beforeAll(async () => {
-  await page.goto('http://localhost:8000/exercise/part3-iterators/');
+  await page.goto('http://localhost:8080/exercises/part3-iterators/');
 });
 
 describe('The countItem function', () => {
+  /* globals countItem */
   it('should return the number times an item is in an array', async () => {
     const value = await page.evaluate(() => countItem([1, 3, 7, 5, 7, 4], 7));
     expect(value).toEqual(2);
@@ -12,12 +13,13 @@ describe('The countItem function', () => {
 });
 
 describe('The filterEven function', () => {
+  /* globals isEven:writeable, filterEven*/
   it('should use the isEven function', async () => {
     const result = await page.evaluate(() => {
       let callArgs = [];
 
       let originalFunc = isEven;
-      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc(...args); };
+      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc(...args) };
 
       try {
         isEven = patchedFunc;
@@ -32,7 +34,7 @@ describe('The filterEven function', () => {
   });
 
   it('should not change the original array', async () => {
-    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; filterEven(arr); return arr; });
+    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; filterEven(arr); return arr });
     expect(value).toEqual([1, 2, 3, 4, 5]);
   });
 
@@ -43,12 +45,13 @@ describe('The filterEven function', () => {
 });
 
 describe('The filterOdd function', () => {
+  /* globals isOdd:writeable, filterOdd */
   it('should use the isOdd function', async () => {
     const result = await page.evaluate(() => {
       let callArgs = [];
 
       let originalFunc = isOdd;
-      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc(...args); };
+      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc(...args) };
 
       try {
         isOdd = patchedFunc;
@@ -63,7 +66,7 @@ describe('The filterOdd function', () => {
   });
 
   it('should not change the original array', async () => {
-    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; filterOdd(arr); return arr; });
+    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; filterOdd(arr); return arr });
     expect(value).toEqual([1, 2, 3, 4, 5]);
   });
 
@@ -74,12 +77,13 @@ describe('The filterOdd function', () => {
 });
 
 describe('The mapIncrement function', () => {
+  /* globals plusOne:writeable, mapIncrement */
   it('should use the plusOne function', async () => {
     const result = await page.evaluate(() => {
       let callArgs = [];
 
       let originalFunc = plusOne;
-      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc(...args); };
+      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc(...args) };
 
       try {
         plusOne = patchedFunc;
@@ -94,7 +98,7 @@ describe('The mapIncrement function', () => {
   });
 
   it('should not change the original array', async () => {
-    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; mapIncrement(arr); return arr; });
+    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; mapIncrement(arr); return arr });
     expect(value).toEqual([1, 2, 3, 4, 5]);
   });
 
@@ -105,12 +109,13 @@ describe('The mapIncrement function', () => {
 });
 
 describe('The mapTriple function', () => {
+  /* globals timesThree:writeable, mapTriple */
   it('should use the timesThree function', async () => {
     const result = await page.evaluate(() => {
       let callArgs = [];
 
       let originalFunc = timesThree;
-      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc(...args); };
+      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc(...args) };
 
       try {
         timesThree = patchedFunc;
@@ -125,7 +130,7 @@ describe('The mapTriple function', () => {
   });
 
   it('should not change the original array', async () => {
-    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; mapTriple(arr); return arr; });
+    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; mapTriple(arr); return arr });
     expect(value).toEqual([1, 2, 3, 4, 5]);
   });
 
@@ -136,12 +141,13 @@ describe('The mapTriple function', () => {
 });
 
 describe('The reduceSum function', () => {
+  /* globals add:writeable, reduceSum */
   it('should use the add function', async () => {
     const result = await page.evaluate(() => {
       let callArgs = [];
 
       let originalFunc = add;
-      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc(...args); };
+      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc(...args) };
 
       try {
         add = patchedFunc;
@@ -156,7 +162,7 @@ describe('The reduceSum function', () => {
   });
 
   it('should not change the original array', async () => {
-    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; reduceSum(arr); return arr; });
+    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; reduceSum(arr); return arr });
     expect(value).toEqual([1, 2, 3, 4, 5]);
   });
 
@@ -167,12 +173,13 @@ describe('The reduceSum function', () => {
 });
 
 describe('The reduceProduct function', () => {
+  /* globals multiply:writeable, reduceProduct */
   it('should use the multiply function', async () => {
     const result = await page.evaluate(() => {
       let callArgs = [];
 
       let originalFunc = multiply;
-      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc(...args); };
+      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc(...args) };
 
       try {
         multiply = patchedFunc;
@@ -187,7 +194,7 @@ describe('The reduceProduct function', () => {
   });
 
   it('should not change the original array', async () => {
-    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; reduceProduct(arr); return arr; });
+    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; reduceProduct(arr); return arr });
     expect(value).toEqual([1, 2, 3, 4, 5]);
   });
 

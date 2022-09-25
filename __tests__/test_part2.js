@@ -1,10 +1,11 @@
 /* global describe, beforeAll, it, page, expect */
 
 beforeAll(async () => {
-  await page.goto('http://localhost:8000/exercise/part2-basic-functions/');
+  await page.goto('http://localhost:8080/exercises/part2-basic-functions/');
 });
 
 describe('The age function', () => {
+  /* globals age */
   it('should return the number of years past', async () => {
     const value = await page.evaluate(() => age(1983));
     const currentYear = (new Date()).getFullYear();
@@ -13,6 +14,7 @@ describe('The age function', () => {
 });
 
 describe('The plusOne function', () => {
+  /* globals plusOne */
   it('should return one more than the given value', async () => {
     const value = await page.evaluate(() => plusOne(77));
     expect(value).toEqual(78);
@@ -20,6 +22,7 @@ describe('The plusOne function', () => {
 });
 
 describe('The timesThree function', () => {
+  /* globals timesThree */
   it('should return three times the given value', async () => {
     const value = await page.evaluate(() => timesThree(20));
     expect(value).toEqual(60);
@@ -27,6 +30,7 @@ describe('The timesThree function', () => {
 });
 
 describe('The add function', () => {
+  /* globals add */
   it('should return the sum of the two given values', async () => {
     const value = await page.evaluate(() => add(15, 25));
     expect(value).toEqual(40);
@@ -34,6 +38,7 @@ describe('The add function', () => {
 });
 
 describe('The multiply function', () => {
+  /* globals multiply */
   it('should return the product of the two given values', async () => {
     const value = await page.evaluate(() => multiply(7, 8));
     expect(value).toEqual(56);
@@ -41,6 +46,7 @@ describe('The multiply function', () => {
 });
 
 describe('The valueAtIndex function', () => {
+  /* globals valueAtIndex */
   it('should return value at the given index in the given array', async () => {
     const value = await page.evaluate(() => valueAtIndex([1, 3, 9, 27, 81, 243], 3));
     expect(value).toEqual(27);
@@ -48,13 +54,15 @@ describe('The valueAtIndex function', () => {
 });
 
 describe('The valueAtKey function', () => {
+  /* globals valueAtKey */
   it('should return value at the given index in the given array', async () => {
-    const value = await page.evaluate(() => valueAtKey({k1: 2, k2: 4, k3: 6}, 'k2'));
+    const value = await page.evaluate(() => valueAtKey({ k1: 2, k2: 4, k3: 6 }, 'k2'));
     expect(value).toEqual(4);
   });
 });
 
 describe('The isEven function', () => {
+  /* globals isEven */
   it('should return true if the value is even, false otherwise', async () => {
     let value;
 
@@ -72,6 +80,7 @@ describe('The isEven function', () => {
 });
 
 describe('The isOdd function', () => {
+  /* globals isOdd */
   it('should return true if the value is odd, false otherwise', async () => {
     let value;
 

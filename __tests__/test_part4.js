@@ -1,20 +1,21 @@
 /* global describe, beforeAll, it, page, expect */
 
 beforeAll(async () => {
-  await page.goto('http://localhost:8000/exercise/part4-functions-as-values/');
+  await page.goto('http://localhost:8080/exercises/part4-functions-as-values/');
 });
 
 describe('The filter function', () => {
+  /* globals filter */
   it('should not use Array.prototype.filter', async () => {
     const result = await page.evaluate(() => {
       let callArgs = [];
 
       let originalFunc = Array.prototype.filter;
-      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc.apply(this, args); };
+      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc.apply(this, args) };
 
       try {
         Array.prototype.filter = patchedFunc;
-        filter([1, 2, 3, 4, 5], (x) => true);
+        filter([1, 2, 3, 4, 5], () => true);
       } finally {
         Array.prototype.filter = originalFunc;
       }
@@ -25,7 +26,7 @@ describe('The filter function', () => {
   });
 
   it('should not change the original array', async () => {
-    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; filter(arr, (x) => false); return arr; });
+    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; filter(arr, () => false); return arr });
     expect(value).toEqual([1, 2, 3, 4, 5]);
   });
 
@@ -41,12 +42,13 @@ describe('The filter function', () => {
 });
 
 describe('The map function', () => {
+  /* globals map */
   it('should not use Array.prototype.map', async () => {
     const result = await page.evaluate(() => {
       let callArgs = [];
 
       let originalFunc = Array.prototype.map;
-      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc.apply(this, args); };
+      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc.apply(this, args) };
 
       try {
         Array.prototype.map = patchedFunc;
@@ -61,7 +63,7 @@ describe('The map function', () => {
   });
 
   it('should not change the original array', async () => {
-    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; map(arr, (x) => x * 2); return arr; });
+    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; map(arr, (x) => x * 2); return arr });
     expect(value).toEqual([1, 2, 3, 4, 5]);
   });
 
@@ -74,12 +76,13 @@ describe('The map function', () => {
 });
 
 describe('The reduce function', () => {
+  /* globals reduce */
   it('should not use Array.prototype.reduce', async () => {
     const result = await page.evaluate(() => {
       let callArgs = [];
 
       let originalFunc = Array.prototype.reduce;
-      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc.apply(this, args); };
+      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc.apply(this, args) };
 
       try {
         Array.prototype.reduce = patchedFunc;
@@ -94,7 +97,7 @@ describe('The reduce function', () => {
   });
 
   it('should not change the original array', async () => {
-    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; reduce(arr, (x, y) => x / y, 1); return arr; });
+    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; reduce(arr, (x, y) => x / y, 1); return arr });
     expect(value).toEqual([1, 2, 3, 4, 5]);
   });
 
