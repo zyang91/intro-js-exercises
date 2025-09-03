@@ -1,37 +1,17 @@
-# Asynchronous behavior, part 1
+# Intro JavaScript Exercises
 
-## Follow-ups from last week:
+## Part 1 - FizzBuzz
 
-1.  Putting data on the map
-    - Working with SDP school list data
-      - Think of `schools` as a table: a collection of records that all have the same fields (attributes), but with different values.
-      - JavaScript is not like R or Pandas; can think of `schools` like a table, but can't treat it like one.
-    - JS isn't built around tables.
-      - **[Arrays](https://github.com/musa-611-fall-2022/course-info/blob/main/resources/arrays.md) are important!**
-      - **[Objects](https://github.com/musa-611-fall-2022/course-info/blob/main/resources/objects.md) are important!**
-      - **[Functions](https://github.com/musa-611-fall-2022/course-info/blob/main/resources/functions.md) are important!**
+FizzBuzz is a simple exercise in using common programming concepts, such as loops and conditions. [exercises/part1-fizzbuzz/]
 
-    - Let's work with a real data set
-      - You've already contributed to a dataset ([class dossier](https://musa-611-fall-2022.github.io/class-dossier/) -- open the console and inspect the `people` variable)
-      - We'll explore some information about schools in Philadelphia
-        - A couple sources: [OpenDataPhilly](https://opendataphilly.org/organization/school-district-of-philadelphia), or the [School District of Philadelphia](https://www.philasd.org/performance/programsservices/open-data/school-information/)
-        - Browsing data in the console
-        - Counting data
-        - Iterating over data (but why 🤔?)
-        - Transforming data (e.g., plucking attributes, reshaping)
-        - Aggregating data (e.g. counteach, ...)
-        - Filtering data
-        - Sorting data
-1.  Introducing form elements
-1.  Laying out a page
-    - The CSS box model, flex box, grid
-    - Manipulating styles in the developer tools
-      * Let's have a bit of fun with https://www.nytimes.com/interactive/2022/09/09/climate/growing-wildfire-risk-homes.html
+## Part 2 - Basic Functions
 
-## Next steps:
+We're going to be making use of functions all over the place in this course. This exercise is a warm up to defining functions and using function arguments. [exercises/part2-basic-functions/]
 
-1.  Responding to interaction
-    - On the map
-    - Through form elements
-1.  Manipulating the DOM
-    - The what? (basically, the HTML document structure)
+## Part 3 - Iterators
+
+A common need when working with data in JavaScript (or any other language) is to loop or "iterate" over a collection of items. In these exercises, use `for` loops to create these functions. [exercises/part3-iterators/]
+
+## Part 4 - Functions as Values
+
+JavaScript allows you to construct what are called "higher-order functions". These are functions that can take other functions as arguments or return them as output. In this part, we'll explore how to work with functions in a more abstract way, which can be useful for data manipulation and transformation, or event handling later on. [exercises/part4-functions-as-values/]
