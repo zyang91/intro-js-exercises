@@ -15,7 +15,7 @@ Example: "age(2000) should return 22"
 
 let age = (birthYear) => {};
 
-console.log('age success:', age(1971) === 51);
+console.log('age success:', age(1971) === 54);
 
 /* =====================
 Instructions: Write a function that adds one to the number provided
