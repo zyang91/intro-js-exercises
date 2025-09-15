@@ -17,6 +17,15 @@ Example: countItem(['a', 'b', 'a'], 'a') should return 2
 ===================== */
 
 let countItem = (arr, item) => {};
+function countItem(arr, item){
+  let count=0;
+  for (let i=0; i<arr.length; i++){
+    if (arr[i] === item){
+      count++;
+    }
+  }
+  return count; 
+}
 
 console.log('countItem success:', countItem([1, 2, 3, 4, 5, 4, 4], 4) === 3);
 
