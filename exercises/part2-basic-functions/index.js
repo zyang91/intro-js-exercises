@@ -124,3 +124,12 @@ let keyForValue = (obj, value) => {
 };
 
 console.log('keyForValue success:', keyForValue({ 'foo': 'bar', 'baz': 'qux' }, 'bar') === 'foo');
+
+
+// let keyForValue2 = (obj, value) => {
+//     for (let key of Object.keys(obj)){
+//         if (obj[key] === value){
+//             return key;
+//         }
+//     }
+// };

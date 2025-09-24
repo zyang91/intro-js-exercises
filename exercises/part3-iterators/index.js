@@ -27,6 +27,16 @@ let countItem = (arr, item) => {
 };
 
 
+// let countItem1 = (arr, item) => {
+//   let count = 0;
+//   for (let val of arr){
+//     if (item===val){
+//       count=count+1;
+//     }
+//     return count;
+//   }
+
+
 console.log('countItem success:', countItem([1, 2, 3, 4, 5, 4, 4], 4) === 3);
 
 /* =====================
@@ -58,6 +68,15 @@ let filterOdd = (arr) => {
   return arr.filter(isOdd);
 };
 
+
+// let filterOdd1 = (arr) => {
+//   let newArr = [];
+//   for (let val of arr){
+//   if (isOdd(val)){
+//     newArr.push(val);
+//   }
+//   return newArr;
+// }
 console.log('filterOdd success:', _(filterOdd([1, 2, 3, 4, 5, 4, 4])).isEqual([1, 3, 5]));
 
 /* =====================
