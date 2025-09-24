@@ -23,6 +23,7 @@ Example: "plusOne(2) should return 3"
 ===================== */
 
 let plusOne = (num) => {return num + 1;};
+// let plusOne = (num) => num + 1; // shorter version, take cautious with this
 
 console.log('plusOne success:', plusOne(99) === 100);
 
